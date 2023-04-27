@@ -1,10 +1,10 @@
 import streamlit as st
 import pickle
 import string
-from nltk.corpus import stopwords
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
- 
+nltk.download('stopwords')
 class SpamClassifier:
     def __init__(self):
         self.ps = PorterStemmer() # Initialize Porter Stemmer for text processing
