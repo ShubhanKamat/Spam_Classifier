@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import string
 import nltk
-from nltk.corpus import stopwords as sw
+from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 import os
@@ -17,7 +17,7 @@ if not os.path.isdir(nltk_data_path):
 class SpamClassifier:
     def __init__(self):
         self.ps = PorterStemmer() # Initialize Porter Stemmer for text processing
-        self.stop_words = set(sw.words('english')) # Load stop words from NLTK corpus
+        self.stop_words = set(stopwords.words('english')) # Load stop words from NLTK corpus
         self.tfidf = None # Initialize tf-idf vectorizer to None
         self.model = None # Initialize model to None
 
