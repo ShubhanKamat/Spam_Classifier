@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+nltk
+wordcloud
+lazypredict
+lightgbm
+scipy
+streamlit
+-e .
