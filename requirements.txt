@@ -4,7 +4,6 @@ matplotlib
 seaborn
 scikit-learn
 nltk
-nltk_data
 wordcloud
 lazypredict
 lightgbm
