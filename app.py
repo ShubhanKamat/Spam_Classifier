@@ -6,6 +6,8 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 import os
+from Source.exception import CustomException
+from Source.logger import logging
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 nltk.data.path.append(nltk_data_path)
 
