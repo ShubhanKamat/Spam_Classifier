@@ -49,14 +49,18 @@ def main():
     st.title("Spam message classifier")
     st.subheader("This app will tell you whether your message is spam or not spam")
     input_sms = st.text_area("Enter the message") # Add a text area for user to input message
-    if st.button('Predict'): # Add a button to trigger the prediction
-        result = classifier.predict(input_sms) # Predict the result using the input message
-        if result == "This message seems like Spam": # If result is Spam
-            st.header("This message seems like Spam")
-            st.image("spam_image.png") # Display the spam image
-        else:
-            st.header("This message does not seem like a Spam")
-            st.image("not_spam.jpg") # Else, display the not-spam image
+    logger.debug('Message entered')
+    try:
+        if st.button('Predict'): # Add a button to trigger the prediction
+            result = classifier.predict(input_sms) # Predict the result using the input message
+            if result == "This message seems like Spam": # If result is Spam
+                st.header("This message seems like Spam")
+                st.image("spam_image.png") # Display the spam image
+            else:
+                st.header("This message does not seem like a Spam")
+                st.image("not_spam.jpg") # Else, display the not-spam image
+    except Exception as e:
+            raise CustomException(e,sys)
 
 if __name__ == '__main__':
     main()
