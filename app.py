@@ -49,7 +49,7 @@ def main():
     st.title("Spam message classifier")
     st.subheader("This app will tell you whether your message is spam or not spam")
     input_sms = st.text_area("Enter the message") # Add a text area for user to input message
-    logger.debug('Message entered')
+    logging.info('Message entered')
     try:
         if st.button('Predict'): # Add a button to trigger the prediction
             result = classifier.predict(input_sms) # Predict the result using the input message
